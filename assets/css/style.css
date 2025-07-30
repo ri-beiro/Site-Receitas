@@ -1,0 +1,209 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #ececec;
+}
+
+/* TOPO */
+.topo {
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.topo img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+.titulo-topo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 10rem;
+  font-family: "Imperial Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  padding: 20px 40px;
+  color: #e63946;
+  font-weight: bolder;
+  text-shadow: 2px 2px 5px rgba(182, 163, 163, 0.4); 
+  border-radius: 12px;
+  /*box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);*/
+}
+
+/* GRID PRINCIPAL */
+.conteudo-principal {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 30px;
+  padding: 0 40px 40px 40px;
+}
+
+/* Garante que o conteúdo da coluna central esteja centralizado */
+.coluna-central {
+    display: flex; /* Usa flexbox para centralizar o conteúdo */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente dentro da coluna */
+}
+
+/* Seu CSS existente para a .noticia */
+.noticia {
+  background: #fff;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+  max-width: 80%; 
+  width: 100%; 
+}
+#noticia {
+    font-family: "Imperial Script", cursive;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #e63946;
+    text-shadow: 2px 2px 5px rgba(182, 163, 163, 0.4); 
+    margin-top: 0; 
+    margin-bottom: 20px;
+}
+
+/* Estilo para a lista de notícias */
+.noticia ul {
+  list-style: none; 
+  padding: 0; 
+  margin: 15px 0 0 0; 
+  width: 100%; 
+}
+
+/* Estilo para cada item da lista (cada notícia) */
+.noticia ul li {
+  margin-bottom: 13px; 
+  text-align: left; 
+  padding: 10px 0; 
+  border-bottom: 2px solid #eee; 
+}
+
+.noticia ul li:last-child {
+    border-bottom: none;
+}
+
+.noticia ul li a {
+  text-decoration: none; 
+  color: #333; 
+  font-weight: 600; 
+  transition: color 0.3s ease; /* Suaviza a transição de cor no hover */
+  display: block; /* Faz o link preencher todo o espaço do li, facilitando o clique */
+}
+
+.noticia ul li a:hover {
+  color: #e63946;
+
+}
+
+/* COLUNAS */
+.coluna-esquerda,
+.coluna-direita {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente os filhos */
+  text-align: center;
+}
+
+.coluna-esquerda img {
+  max-width: 90%;
+  border-radius: 12px;
+  margin: 10px 0;
+  display: block;
+}
+#receitas-populares {
+    font-family: "Imperial Script", cursive;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #e63946;
+    text-shadow: 2px 2px 5px rgba(182, 163, 163, 0.4); 
+    margin-top: 0; 
+    margin-bottom: 20px;
+}
+
+#promocoes {
+    font-family: "Imperial Script", cursive;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #e63946;
+    text-shadow: 2px 2px 5px rgba(182, 163, 163, 0.4); 
+    margin-top: 0; 
+    margin-bottom: 20px;
+}
+
+h3 {
+  text-align: center;
+}
+
+.coluna-direita ul {
+  padding-left: 20px;
+}
+
+.coluna-direita li {
+  margin-bottom: 10px;
+}
+
+/* COLUNA CENTRAL (MENU) */
+.menu-botoes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 80%; /* Limita a largura para torná-lo proporcional */
+  width: 100%; /* Garante que ele respeite o max-width */
+}
+
+button {
+  font-size: 2.5rem;
+  padding: 15px 40px;
+  width: 100%; /* Mantém 100% para que os botões preencham seu pai (.menu-botoes) */
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #e63946, #ec9230);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .conteudo-principal {
+    grid-template-columns: 1fr;
+  }
+
+  .topo img {
+    max-height: 200px;
+  }
+
+  /* Ajusta o max-width para telas menores, se necessário */
+  .menu-botoes,
+  .noticia {
+    max-width: 90%; /* Permite maior largura em telas pequenas */
+  }
+}
