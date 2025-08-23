@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mousse de Morango</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: lightgray;
+            padding: 20px;
+        }
+
+        .daily-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 40px 50px;
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .daily-container h1 {
+            font-size: 2.5rem;
+            padding: 15px 40px;
+            width: 50%;
+            margin: 30px auto;
+            display: block;
+            text-align: center;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(to right, #964B00, #ec9230);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .daily-content {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .daily-content p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        #foto-receita {
+            width: 600px;
+            height: 350px;
+            margin: 0 auto;
+            display: block;
+            margin-top: -15px;
+            border: 5px solid transparent;
+            border-image: linear-gradient(to right, #964B00, #ec9230) 1;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            padding: 15px 40px;
+            width: 50%;
+            align-items: center;
+            margin: 30px auto;
+            display: block;
+            text-align: center;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(to right, #e63946, #ec9230);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .ingredientes {
+            font-size: 1.2rem;
+        }
+
+        /* Estilos gerais para a seção de utensílios */
+        .utensilios-section {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+        }
+
+        .utensilios-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        /* Estilos para o contêiner dos cards (GRID) */
+        .utensilios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        /* Estilos para cada bloco/card de utensílio */
+        .utensilio-card {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 180px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .utensilio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Estilos para as imagens dos utensílios */
+        .utensilio-img {
+            max-width: 100px;
+            max-height: 80px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .utensilio-nome {
+            font-size: 1.1em;
+            color: #555;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+
+        /* Estilos para o botão "Comprar" */
+        .btn-comprar {
+            background-color: #ff9900;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            width: 80%;
+            max-width: 150px;
+        }
+
+        .btn-comprar:hover {
+            background-color: #e68a00;
+        }
+
+        /* Estilos para o aviso na parte inferior */
+        .aviso-compra {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        /* Media Queries para responsividade */
+        @media (max-width: 650px) {
+            .utensilios-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .modo-preparo {
+            font-size: 1.2rem;
+        }
+
+        /* Container para os botões de navegação */
+        .about-navigation {
+            text-align: center;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Estilo geral para todos os botões */
+button {
+    font-size: 1.5rem; /* Ajustado para um tamanho mais padrão */
+    padding: 15px 40px;
+    width: auto; /* Deixa a largura automática para cada botão */
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #e63946, #ec9230); /* Aplica o gradiente de fundo */
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+    </style>
+</head>
+
+<body>
+    <div class="daily-container">
+        <h1>Mousse de Morango</h1>
+
+        <div class="daily-content">
+            <div class="foto-receita-daily">
+                <!-- Imagem de Mousse de Morango -->
+                <img id="foto-receita" src="./assets/images/pave-morango.jpg" alt="Imagem de Mousse de Morango">
+            </div>
+            <h3>Ingredientes</h3>
+            <div class="ingredientes">
+                <ul>
+                    <li><b>1 lata de leite condensado</b></li><br>
+                    <li><b>1 lata de creme de leite (com soro)</b></li><br>
+                    <li><b>1 pacote de gelatina de morango</b></li><br>
+                    <li><b>1 xícara de morangos frescos picados</b></li><br>
+                    <li><b>1/2 xícara de água quente</b></li><br>
+                </ul>
+            </div>
+
+            <div class="utensilios-section">
+                <h3>Utensílios</h3>
+
+                <div class="utensilios-grid">
+                    <div class="utensilio-card">
+                        <!-- Imagem de um liquidificador -->
+                        <img src="./assets/images/card-prom/liquidificador.png" alt="Liquidificador" class="utensilio-img">
+                        <p class="utensilio-nome">Liquidificador</p>
+                        <button class="btn-comprar" onclick="window.open('https://www.amazon.com.br/s?k=liquidificador', '_blank')">Comprar</button>
+                    </div>
+
+                    <div class="utensilio-card">
+                        <!-- Imagem de uma tigela -->
+                        <img src="./assets/images/utensilios/tigela.png" alt="Tigela" class="utensilio-img">
+                        <p class="utensilio-nome">Tigela</p>
+                        <button class="btn-comprar" onclick="window.open('https://www.amazon.com.br/s?k=tigela+grande', '_blank')">Comprar</button>
+                    </div>
+
+                    <div class="utensilio-card">
+                        <!-- Imagem de uma colher de pau ou espátula -->
+                        <img src="./assets/images/utensilios/espatula.png" alt="Espátula" class="utensilio-img">
+                        <p class="utensilio-nome">Espátula</p>
+                        <button class="btn-comprar" onclick="window.open('https://www.amazon.com.br/s?k=espatula', '_blank')">Comprar</button>
+                    </div>
+
+                    <div class="utensilio-card">
+                        <!-- Imagem de um copo de medição -->
+                        <img src="./assets/images/utensilios/copo-medida.png" alt="Copo de medida" class="utensilio-img">
+                        <p class="utensilio-nome">Copo de Medida</p>
+                        <button class="btn-comprar" onclick="window.open('https://www.amazon.com.br/s?k=copo+de+medida', '_blank')">Comprar</button>
+                    </div>
+                </div>
+
+                <p class="aviso-compra"><mark><b>Ao clicar em comprar você será redirecionado para o site da Amazon.com.br</b></mark></p>
+            </div>
+
+            <div class="modo-preparo">
+                <h3>Modo de Preparo</h3>
+                <ul class="lista-de-preparo">
+                    <li>
+                        Dissolva o pacote de gelatina de morango em 1/2 xícara de água quente. Mexa bem até dissolver completamente.
+                    </li><br>
+                    <li>
+                        No liquidificador, adicione o leite condensado, o creme de leite, os morangos picados e a gelatina dissolvida.
+                    </li><br>
+                    <li>
+                        Bata tudo por cerca de 3 a 5 minutos, ou até obter uma mistura homogênea e cremosa.
+                    </li><br>
+                    <li>
+                        Despeje a mistura em uma tigela ou em taças individuais.
+                    </li><br>
+                    <li>
+                        Leve à geladeira por pelo menos 4 horas, ou até que o mousse esteja firme.
+                    </li><br>
+                    <li>
+                        Decore com morangos frescos antes de servir.
+                    </li><br>
+                    <li>
+                        Bom apetite!
+                    </li><br>
+                </ul>
+            </div>
+
+        </div>
+        <div class="about-navigation">
+            <a href="menu-doce.html"><button type="submit"> + Receitas</button></a>
+            <a href="index.html"><button type="submit">Menu</button></a>
+        </div>
+    </div>
+</body>
+
+</html>

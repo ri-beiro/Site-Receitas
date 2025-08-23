@@ -1,0 +1,95 @@
+/*
+ * Arquivo: assets/css/about.css
+ * Estilos específicos para a página "Sobre o Site"
+ */
+
+/* ================================================================ */
+/* ESTILOS GLOBAIS / RESET (herdados ou redefinidos para this page) */
+/* ================================================================ */
+
+/* O seletor universal é bom para resetar ou aplicar estilos globais que
+   não devem ser sobrescritos facilmente, como a fonte padrão. */
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos no width/height */
+}
+
+/* Define o tamanho da fonte base para 'rem' */
+html {
+    font-size: 16px; /* 1rem = 16px. Você pode ajustar isso */
+}
+
+/* Estilos para o corpo da página (centraliza o conteúdo) */
+body {
+    margin: 0; /* Remove margens padrão do body */
+    /* font-family: sans-serif; - REMOVIDO: Já está no '*' seletor acima para consistência */
+   
+    /* ***** NOVOS ESTILOS PARA CENTRALIZAR O CONTEÚDO ***** */
+    display: flex; /* Transforma o body em um container flex */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente no container flex */
+    align-items: center; /* Centraliza o conteúdo verticalmente no container flex */
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport (tela visível) */
+    /* *************************************************** */
+
+    background-color: lightgray; /* Cor de fundo para visualização */
+    padding: 20px; /* Adiciona padding para evitar que o conteúdo encoste nas bordas em telas pequenas */
+}
+
+/* ================================================================ */
+/* ESTILOS ESPECÍFICOS DA PÁGINA "SOBRE" */
+/* ================================================================ */
+
+/* Container principal que engloba todo o conteúdo da página "Sobre" */
+.about-container {
+    background-color: #ffffff;
+    border-radius: 12px; /* Cantos arredondados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 40px 50px; /* Espaçamento interno */
+    max-width: 900px; /* Largura máxima para o container */
+    width: 100%; /* Ocupa 100% da largura disponível até o max-width */
+    text-align: center; /* Centraliza o título e o botão de navegação */
+}
+
+/* Estilo para o título principal da página "Sobre" */
+.about-container h1 {
+    font-family: "Imperial Script", cursive;
+    font-weight: bold;
+    font-size: 5rem;
+    color: #e63946;
+    text-shadow: 2px 2px 5px rgba(182, 163, 163, 0.4); 
+    margin-top: 0; 
+    margin-bottom: 20px;
+}
+
+/* Container do texto "Sobre o Receitinhas" */
+.about-content {
+    margin-bottom: 40px; /* Espaço abaixo do bloco de texto */
+    text-align: left; /* Alinha o texto à esquerda para melhor legibilidade */
+
+}
+
+/* Estilo para os parágrafos dentro do conteúdo "Sobre" */
+.about-content p {
+    font-size: 1.15rem; /* Tamanho da fonte dos parágrafos */
+    line-height: 1.8; /* Espaçamento entre as linhas */
+    margin-bottom: 20px; /* Espaço entre os parágrafos */
+    color: #555; /* Cor de texto ligeiramente mais escura */
+}
+
+button {
+  font-size: 2.5rem;
+  padding: 15px 40px;
+  width: 25%; 
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #e63946, #ec9230);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,239 @@
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box; 
+}
+
+
+html {
+    font-size: 16px; 
+}
+
+
+body {
+    margin: 0; 
+  
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    
+    background-color: lightgray; 
+    padding: 20px; 
+}
+
+.daily-container {
+    background-color: #ffffff;
+    border-radius: 12px; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
+    padding: 40px 50px; 
+    max-width: 900px; 
+    width: 100%; 
+    text-align: center; 
+}
+
+.daily-container h1 {
+    font-size: 2.5rem;
+    padding: 15px 40px;
+    width: 50%; 
+    margin: 30px auto;
+    display: block; 
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #964B00, #ec9230);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.daily-content {
+    margin-bottom: 40px; 
+    text-align: left; 
+}
+
+
+.daily-content p {
+    font-size: 1.15rem; 
+    line-height: 1.8; 
+    margin-bottom: 20px; 
+    color: #555; 
+}
+
+#foto-receita {
+    width: 600px;
+    height: 350px;
+    margin: 0 auto;
+    display: block;
+    /*border-radius: 15px; */
+    margin-top: -15px;
+    border: 5px solid transparent;
+    border-image: linear-gradient(to right, #964B00, #ec9230) 1;
+}
+
+/*h2 {
+    font-size: 1.5rem;
+    padding: 15px 40px;
+    width: 50%; 
+    margin: 30px auto;
+    display: block; 
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #964B00, #ec9230);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}*/
+
+h3 {
+  font-size: 1.5rem;
+  padding: 15px 40px;
+  width: 50%; 
+  align-items: center;
+  margin: 30px auto;
+  display: block;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right, #e63946, #ec9230);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ingredientes {
+    font-size: 1.2rem;
+    
+}
+/* Estilos gerais para a seção de utensílios */
+.utensilios-section {
+    width: 90%; /* Ajuste a largura total da seção conforme necessário */
+    max-width: 900px; /* Garante que não fique muito largo em telas grandes */
+    margin: 40px auto; /* Centraliza a seção horizontalmente e adiciona margem superior/inferior */
+    padding: 20px;
+    background-color: #fff; /* Fundo branco para a seção */
+    border-radius: 10px; /* Bordas arredondadas para a seção principal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    font-family: Arial, sans-serif; /* Fonte legível */
+}
+
+.utensilios-section h2 {
+    text-align: center; /* Centraliza o título "Utensílios" */
+    color: #333; /* Cor escura para o título */
+    margin-bottom: 30px; /* Espaço abaixo do título */
+    font-size: 2em; /* Tamanho do título */
+}
+
+/* Estilos para o contêiner dos cards (GRID) */
+.utensilios-grid {
+    display: grid;
+    /* Define o número de colunas e o tamanho.
+       Aqui: 2 colunas com tamanho flexível. */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajustado minmax para mais espaço */
+    gap: 20px; /* Espaço entre os blocos */
+    justify-content: center; /* Centraliza os itens no grid */
+    align-items: stretch; /* Garante que os itens tenham a mesma altura */
+}
+
+/* Estilos para cada bloco/card de utensílio */
+.utensilio-card {
+    background-color: #f8f8f8; /* Fundo leve para cada card */
+    border: 1px solid #ddd; /* Borda sutil */
+    border-radius: 8px; /* Cantos arredondados para os cards */
+    padding: 15px; /* Reduzi um pouco o padding para a imagem e botão */
+    display: flex;
+    flex-direction: column; /* Organiza os itens verticalmente: imagem, nome, botão */
+    justify-content: space-between; /* Espalha o conteúdo para cima e para baixo */
+    align-items: center; /* Centraliza horizontalmente imagem, nome e botão */
+    min-height: 180px; /* Aumentei a altura mínima para acomodar tudo */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.utensilio-card:hover {
+    transform: translateY(-5px); /* Levanta mais ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+}
+
+/* Estilos para as imagens dos utensílios */
+.utensilio-img {
+    max-width: 100px; /* Tamanho máximo da imagem */
+    max-height: 80px; /* Altura máxima da imagem */
+    object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
+    margin-bottom: 10px; /* Espaço abaixo da imagem */
+}
+
+.utensilio-nome {
+    font-size: 1.1em;
+    color: #555;
+    font-weight: bold;
+    margin: 0 0 10px 0; /* Margem inferior para separar do botão */
+}
+
+/* Estilos para o botão "Comprar" */
+.btn-comprar {
+    background-color: #ff9900; /* Cor laranja da Amazon */
+    color: white; /* Texto branco */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer; /* Indica que é clicável */
+    transition: background-color 0.2s ease-in-out; /* Transição suave na cor de fundo */
+    width: 80%; /* Botão ocupa 80% da largura do card */
+    max-width: 150px; /* Limita a largura máxima do botão */
+}
+
+.btn-comprar:hover {
+    background-color: #e68a00; /* Laranja um pouco mais escuro ao passar o mouse */
+}
+
+/* Estilos para o aviso na parte inferior */
+.aviso-compra {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 650px) { /* Ajustei o breakpoint para mobile */
+    .utensilios-grid {
+        grid-template-columns: 1fr; /* Em telas menores, mostra apenas 1 coluna */
+    }
+}
+
+.modo-preparo {
+    font-size: 1.2rem;
+}
+/* Container para os botões de navegação */
+.about-navigation {
+    text-align: center;
+    margin-top: 30px;
+    display: flex; /* Transforma a div em um contêiner flexível */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    gap: 20px; /* Adiciona um espaçamento entre os botões */
+}
+
+/* Estilo geral para todos os botões */
+button {
+    font-size: 1.5rem; /* Ajustado para um tamanho mais padrão */
+    padding: 15px 40px;
+    width: auto; /* Deixa a largura automática para cada botão */
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #e63946, #ec9230); /* Aplica o gradiente de fundo */
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
